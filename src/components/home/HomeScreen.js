@@ -23,7 +23,7 @@ export const HomeScreen = () => {
     <>
        <section>
         <div className="row justify-content-md-center m-0">
-            <div className="col-12 col-offset-md-2 col-md-8 p-0 img-container" style={{ backgroundImage: `url("assets/home/01.jpg")` }}></div>
+            <div className="col-12 col-offset-md-2 col-md-8 p-0 img-container"></div>
         </div>
 
         <div className="row m-0 justify-content-around circles-container">
