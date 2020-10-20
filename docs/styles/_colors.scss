@@ -1,0 +1,10 @@
+$purple: #625491;
+$green: #89d629;
+$pink: #fa6e9f;
+$orange: #f29100;
+$blue: #2d76b5;
+
+
+@mixin transparent_bckg($color, $opacity) {
+    background-color: rgba($color: $color, $alpha: $opacity);
+}
