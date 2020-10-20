@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/konicu/static/css/main.69dbcacb.chunk.css",
+    "main.js": "/konicu/static/js/main.77e3c5a1.chunk.js",
+    "main.js.map": "/konicu/static/js/main.77e3c5a1.chunk.js.map",
+    "runtime-main.js": "/konicu/static/js/runtime-main.77350a17.js",
+    "runtime-main.js.map": "/konicu/static/js/runtime-main.77350a17.js.map",
+    "static/css/2.2ce0d9b2.chunk.css": "/konicu/static/css/2.2ce0d9b2.chunk.css",
+    "static/js/2.d4fcc676.chunk.js": "/konicu/static/js/2.d4fcc676.chunk.js",
+    "static/js/2.d4fcc676.chunk.js.map": "/konicu/static/js/2.d4fcc676.chunk.js.map",
+    "index.html": "/konicu/index.html",
+    "precache-manifest.e130dffbf822b2f410e7647b5d1e9422.js": "/konicu/precache-manifest.e130dffbf822b2f410e7647b5d1e9422.js",
+    "service-worker.js": "/konicu/service-worker.js",
+    "static/css/2.2ce0d9b2.chunk.css.map": "/konicu/static/css/2.2ce0d9b2.chunk.css.map",
+    "static/css/main.69dbcacb.chunk.css.map": "/konicu/static/css/main.69dbcacb.chunk.css.map",
+    "static/js/2.d4fcc676.chunk.js.LICENSE.txt": "/konicu/static/js/2.d4fcc676.chunk.js.LICENSE.txt",
+    "static/media/home.scss": "/konicu/static/media/01.89c7d244.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.77350a17.js",
+    "static/css/2.2ce0d9b2.chunk.css",
+    "static/js/2.d4fcc676.chunk.js",
+    "static/css/main.69dbcacb.chunk.css",
+    "static/js/main.77e3c5a1.chunk.js"
+  ]
+}
