@@ -1,8 +1,7 @@
 import gsap from "gsap";
-import { ScrollTrigger } from 'gsap/all';
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export const parallaxEffect = () => {
-
+export const home = () => {
   gsap.registerPlugin(ScrollTrigger);
   ScrollTrigger.create({
       trigger: "#cards",
@@ -17,4 +16,16 @@ export const parallaxEffect = () => {
       end: "+=200", // 200px past the start 
       pin: "#sponsors-content"
     });
+}
+
+export const topic = () => {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.to(".parallax-bg", {
+    scrollTrigger: {
+      scrub: true
+    }, 
+    y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
+    ease: "none"
+  });
+  
 }

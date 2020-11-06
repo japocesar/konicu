@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
 
 import './navbar.scss';
 
 export const Navbar = () => {
+    const [expanded, setExpanded] = useState(false);
+
+    const handleExpand = () => setExpanded(!expanded);
+
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+        <nav className={`navbar navbar-expand-sm navbar-dark bg-dark ${ expanded ? 'expanded' : '' }`}>
             <Link className="navbar-brand" to="/">
                 Konicú
             </Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <button onClick={ handleExpand } className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
 
@@ -32,7 +36,17 @@ export const Navbar = () => {
                             exact
                             to="/tema-del-mes"
                         >
-                            Tema de Mes
+                            Tema del Mes
+                        </NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink
+                            activeClassName="active" 
+                            className="nav-link" 
+                            exact
+                            to="/soy-su-fan"
+                        >
+                            Soy su Fan
                         </NavLink>
                     </li>
                 </ul>

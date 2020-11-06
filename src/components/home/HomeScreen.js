@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { Circle } from '../ui/circle/Circle';
 import { bannerCircles } from '../../data/bannerCircles';
 import { cards } from "../../data/cards";
-import { parallaxEffect } from "../../helpers/home";
+import { home } from "../../helpers/parallax";
 
 
 import "animate.css";
@@ -16,7 +16,7 @@ import { Card } from '../ui/card/Card';
 export const HomeScreen = () => {
 
     useEffect(() => {
-        parallaxEffect();
+        home();
     }, [])
     
     return (
@@ -52,6 +52,7 @@ export const HomeScreen = () => {
         <section style={{ height: 300 }} className="panel purple">
             Easy Peasy!
         </section>
+
     </>
 
     )

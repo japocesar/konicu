@@ -1,0 +1,199 @@
+@import "colors";
+
+%text-container-shared {
+    background-image: url("../../assets/topic/papel-bkgnd.png");
+    background-size: cover;
+    color: white;
+    opacity: 0.9;
+    padding: 28px;
+    position: absolute;
+    z-index: 9;
+}
+
+.datos {
+    // background-color: rgba(255, 0, 0, 0.8);
+    // @include transparent_bckg($blue, 0.8);
+    @extend %text-container-shared;
+    right: 15%;
+    top: 690px;
+    // min-width: 98vw;
+    width: 310px;//35%;
+}
+
+.catrina {
+    @extend %text-container-shared;
+    left: 10%;
+    top: 100px;
+    width: 250px;
+    padding: 30px;
+}
+
+.pan {
+    @extend %text-container-shared;
+    left: 40%;
+    top: 1400px;
+    width: 230px;
+    padding: 25px;
+}
+
+.topic-container {
+    background: rgba(230, 231, 232, 1);
+    height: 4600px;
+  }
+
+/* foreground (balloons/landscape)*/
+div#parallax-bg-1 {
+    position: fixed;
+    // width: 1200px;
+    width: 100vw;
+    top: 0;
+    left: 50%;
+    margin-left: -600px;
+    z-index: 1;
+
+    /*background layer clouds */
+    div {
+        background-repeat: no-repeat;
+        position: absolute;
+        display: block;
+        width: 488px;
+        height: 138px;
+        overflow: hidden;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+        
+        &#bg-1-1 {
+            background: url("../../assets/topic/papel.png");
+            top: 200px;
+            // right: 450px;
+            right: 15%;
+        }
+        &#bg-1-2 {
+            background: url("../../assets/topic/papel2.png");
+            top: 420px;
+            left: 0px;
+        }
+        &#bg-1-3 {
+            background: url("../../assets/topic/papel2.png");
+            top: 850px;
+            right: -290px;
+        }
+        &#bg-1-4 {
+            background: url("../../assets/topic/papel.png");
+            top: 1350px;
+            left: 200px;
+        }
+        &#bg-1-5 {
+            background: url("../../assets/topic/papel2.png");
+            top: 1200px;
+            left: 20%;
+        }
+    }
+  }
+
+  /* background middle layer*/
+div#parallax-bg-2 {
+    position: fixed;
+    width: 1200px;
+    top: 0;
+    left: 50%;
+    margin-left: -600px;
+    z-index: 2;
+
+    div {
+        // background: url("../../assets/topic/papel2.png");
+        background-repeat: no-repeat;
+        position: absolute;
+        display: block;
+        background-size: contain;
+        width: 488px;
+        // width: 100vw;
+        height: 138px;
+        overflow: hidden;
+        background-size: contain !important;
+        background-repeat: no-repeat !important;
+
+        &#bg-2-1 {
+            background: url("../../assets/topic/papel.png");
+            top: 100px;
+            left: 33%;
+        }
+        &#bg-2-2 {
+            background: url("../../assets/topic/papel2.png");
+            top: 270px;
+            right: -70px;
+        }
+        &#bg-2-3 {
+            background: url("../../assets/topic/papel2.png");
+            top: 870px;
+            left: -300px;
+        }
+        &#bg-2-4 {
+            background: url("../../assets/topic/papel.png");
+            top: 1120px;
+            right: -130px;
+        }
+        &#bg-2-5 {
+            background: url("../../assets/topic/papel.png");
+            top: 1620px;
+            // left: 140px;
+            left: 50%;
+        }
+        &#bg-2-6 {
+            background: url("../../assets/topic/papel2.png");
+            top: 720px;
+            left: 340px;
+        }
+    }
+  }
+
+div#parallax-bg-3 {
+    position: fixed;
+    width: 960px;
+    top: 0;
+    left: 50%;
+    margin-left: -470px;
+    z-index: 3;
+
+    /* foreground */
+    div {
+        background-repeat: no-repeat;
+        position: absolute;
+        display: block;
+        overflow: hidden;
+
+        &#bg-3-1 {
+            // background: url("http://schulzmarcel.de/x/drafts/parallax/img/balloon.png");
+            background: url("../../assets/topic/catrina.png");
+            // width: 529px;
+            width: 890px;
+            height: 757px;
+            top: -100px;
+            // right: 100px;
+            right: 0%;
+        }
+        &#bg-3-2 {
+            // background: url("http://schulzmarcel.de/x/drafts/parallax/img/balloon2.png");
+            background: url("../../assets/topic/pan.png");
+            width: 603px;
+            height: 583px;
+            // top: 1050px;
+            top: 850px;
+            left: 70px;
+        }
+        &#bg-3-3 {
+            background: url("http://schulzmarcel.de/x/drafts/parallax/img/balloon3.png");
+            width: 446px;
+            height: 713px;
+            top: 1800px;
+            right: 140px;
+        }
+        &#bg-3-4 {
+            background: url("http://schulzmarcel.de/x/drafts/parallax/img/ground.png");
+            width: 1104px;
+            height: 684px;
+            top: 2800px;
+            right: 0px;
+        }
+    }
+  }
