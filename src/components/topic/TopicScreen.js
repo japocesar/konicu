@@ -17,7 +17,6 @@ export const TopicScreen = () => {
                 <div id="bg-3-1"></div>
                 <div id="bg-3-2"></div>
                 <div id="bg-3-3"></div>
-                <div id="bg-3-4"></div>
             </div>
 
             <TextContainer id={ 2 } name="pan podcast" />
