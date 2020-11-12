@@ -20,10 +20,9 @@ export const FanScreen = () => {
 
     useEffect(() => {
         setTimeout(() => {
-            alert.current.classList.add('animate__flipOutY');
-            alert.current.addEventListener('animationend', () => {
-                alert.current.classList.add('invisible');
-              });
+            if( alert.current ) {
+                alert.current.classList.add('animate__flipOutY');
+            }
         }, 3000);
     }, [cardData])
 

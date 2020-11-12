@@ -45,13 +45,13 @@ export const HomeScreen = () => {
             </div>
         </section>
 
-        <section style={{ height: 300 }} id="sponsors" className="panel red align-top">
+        {/* <section style={{ height: 300 }} id="sponsors" className="panel red align-top">
             <p id="sponsors-content"><code>start: "top center"</code> pins this element when the <strong>top</strong> of the red element hits the <strong>center</strong> of the viewport, and remains pinned for 200px because its <code>end</code> is defined as <code>"+=200"</code></p>
         </section>
 
         <section style={{ height: 300 }} className="panel purple">
             Easy Peasy!
-        </section>
+        </section> */}
 
     </>
 

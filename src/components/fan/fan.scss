@@ -1,3 +1,9 @@
+.alert {
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+}
+
 .col {
     max-height: 250px;
 
@@ -14,8 +20,4 @@
             cursor: pointer;
         }
     }
-}
-
-.invisible {
-    display: none;
 }
