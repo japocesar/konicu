@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactPlayer from "react-player";
-import './modal.scss';
+import './fanModal.scss';
 
-export const Modal = ( { titulo, texto, img, video } ) => {
+export const FanModal = ( { titulo, texto, img, video } ) => {
 
     // const [localImg, setLocalImg] = useState(null);
     // import(`../../../assets/${ img }.png`).then( image => setLocalImg(image.default)).catch(() => setLocalImg(null));

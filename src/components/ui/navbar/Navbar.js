@@ -51,6 +51,16 @@ export const Navbar = () => {
                             Soy su Fan
                         </NavLink>
                     </li>
+                    <li className="nav-item">
+                        <NavLink
+                            activeClassName="active" 
+                            className="nav-link" 
+                            exact
+                            to="/expresate"
+                        >
+                            Exprésate
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
         </nav>

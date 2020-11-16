@@ -3,7 +3,7 @@ import { ImageCard } from '../ui/card/ImageCard';
 import  { cards } from '../../data/fan';
 
 import './fan.scss';
-import { Modal } from '../ui/modal/Modal';
+import { FanModal } from './FanModal';
 
 export const FanScreen = () => {
     const [cardData, setCardData] = useState({});
@@ -42,7 +42,7 @@ export const FanScreen = () => {
                 )}
             </div>
             <button hidden ref={btn} type="button" data-toggle="modal" data-target="#exampleModalLabel">Launch modal</button>
-            <Modal { ...cardData } />
+            <FanModal { ...cardData } />
         </div>
         </>
     )

@@ -1,0 +1,45 @@
+@import "colors";
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--blue); 
+  }
+
+  .custom-list {
+      list-style: none;
+
+      li::before {
+        content: "\2022";
+        color: var(--pink);
+        font-weight: bold;
+        display: inline-block; 
+        width: 1em;
+        margin-left: -1em;
+      }
+  }
+
+  .btn-primary:hover {
+      background-color: var(--orange);
+      border-color: var(--orange);
+  }
+
+  a:hover {
+      svg {
+          color: var(--orange);
+      }
+  }

@@ -5,6 +5,7 @@ import {
     Route,
     Redirect
   } from "react-router-dom";
+import { Collaborate } from '../components/collaborate/Collaborate';
 import { FanScreen } from '../components/fan/FanScreen';
 import { HomeScreen } from '../components/home/HomeScreen';
 import { TopicScreen } from '../components/topic/TopicScreen';
@@ -22,6 +23,9 @@ export const AppRouter = () => {
                         </Route>
                         <Route exact path="/tema-del-mes">
                             <TopicScreen />
+                        </Route>
+                        <Route exact path="/expresate">
+                            <Collaborate />
                         </Route>
                         <Route exact path="/">
                             <HomeScreen />
