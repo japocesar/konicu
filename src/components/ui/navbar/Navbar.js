@@ -12,7 +12,7 @@ export const Navbar = () => {
     return (
         <nav className={`navbar navbar-expand-sm navbar-dark bg-dark ${ expanded ? 'expanded' : '' }`}>
             <Link className="navbar-brand" to="/">
-                <img className="mr-2" src={ konicu } alt="Konicu" style={{ maxHeight: "40px" }} />
+                <img className="mr-2" src={ konicu } alt="Konicu" style={{ height: "40px", width: 'auto' }} />
                 Konicú
             </Link>
             <button onClick={ handleExpand } className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">

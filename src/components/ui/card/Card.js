@@ -23,7 +23,7 @@ export const Card = ( { titulo, descripcion, clase, icono, link, subiconos, list
             </div>
             { ( link ) && (
                 <Link className="btn btn-outline-success" to={ link }>
-                 Ir
+                 Ir a "{ titulo }"
              </Link>
             ) }
         </div>
