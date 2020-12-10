@@ -35,7 +35,7 @@ export const HomeScreen = () => {
         </div> 
        </section>
 
-        <section  id="cards" className="panel orange align-top my-3">
+        <section  id="cards" className="panel orange align-top my-3 mb-5">
             <div className="container cards-container">
                 <div className="card-deck container">
                     { cards.map( card => (

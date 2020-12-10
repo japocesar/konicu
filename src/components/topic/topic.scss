@@ -109,6 +109,7 @@ $light-off-opacity: 0.4;
     background: darken(red, 10%);
     width: 25vw;
     height: 25vh;
+    top: 40%;
     // transform: scale(3);
   }
   
@@ -123,6 +124,7 @@ $light-off-opacity: 0.4;
     background: red;
     width: 75vw;
     height: 75vh;
+    top: 10%;
     // transform: scale(1);
   }
   100% {
@@ -132,7 +134,8 @@ $light-off-opacity: 0.4;
     height: 100vh;
     z-index: 1000;
     left: 0;
-    bottom: 0;
+    // bottom: 0;
+    top: 0;
 
     // transform: scale(1);
   }
@@ -145,7 +148,8 @@ $light-off-opacity: 0.4;
     height: 100vh;
     z-index: 1000;
     left: 0;
-    bottom: 0;
+    // bottom: 0;
+    top: 0;
   }
   25% {
     border-radius: 15px;
@@ -153,7 +157,8 @@ $light-off-opacity: 0.4;
     height: 75vh;
     z-index: unset;
     left: 5px;
-    bottom: 5px;
+    // bottom: 5px;
+    top: 10%;
   }
   
   50% {
@@ -161,7 +166,8 @@ $light-off-opacity: 0.4;
     height: 50vh;
     border-radius: 25px;
     left: 8px;
-    bottom: 8px;
+    // bottom: 8px;
+    top: 30%;
     // transform: scale(1);
   }
   75% {
@@ -169,22 +175,25 @@ $light-off-opacity: 0.4;
     height: 25vh;
     border-radius: 40px;
     left: 12px;
-    bottom: 12px;
+    // bottom: 12px;
+    top: 45%;
   }
   100% {
     border-radius: 50px;
     left: 15px;
-    bottom: 15px;
+    // bottom: 15px;
+    top: 56%;
     // transform: scale(1);
   }
 }
 
 .tips-btn {
     border-radius: 50px;
-    bottom: 15px;
+    // bottom: 100px;
     height: 60px;
     left: 15px;
     position: fixed;
+    top: 56%;
     width: 60px;
 
     &.active{

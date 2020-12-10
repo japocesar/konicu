@@ -9,6 +9,7 @@ import { Collaborate } from '../components/collaborate/Collaborate';
 import { FanScreen } from '../components/fan/FanScreen';
 import { HomeScreen } from '../components/home/HomeScreen';
 import { TopicScreen } from '../components/topic/TopicScreen';
+import { Footer } from '../components/ui/footer/Footer';
 import { Navbar } from '../components/ui/navbar/Navbar'
 
 export const AppRouter = () => {
@@ -33,6 +34,7 @@ export const AppRouter = () => {
                         
                         <Redirect to="/" />
                     </Switch>
+                    <Footer />
                 </Router>
             </div>
         </>
