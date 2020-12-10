@@ -1,42 +1,47 @@
-import React, { useEffect } from 'react';
-import { topic } from '../../helpers/parallax';
-import { TextContainer } from './TextContainer';
+import React, { useCallback, useEffect, useState } from 'react';
+import { Lights } from './Lights';
+import { Numeralia } from './Numeralia';
+import { Snow } from './Snow';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLightbulb } from "@fortawesome/free-solid-svg-icons";
 import './topic.scss';
+import { Tips } from './Tips';
 
 export const TopicScreen = () => {
+
+    const [isActive, setIsActive] = useState();
+
     useEffect(() => {
-        topic();
-    }, [])
+        const cl = document.querySelector('.tips-btn').classList;
+        if (isActive === true) {
+            cl.remove('inactive');
+            cl.add('active');
+         } else if ( isActive === false ) {
+             cl.remove('active');
+             cl.add('inactive');
+         }
+    }, [isActive])
+
+    const close = useCallback(
+        () => {
+           setIsActive(false);
+        },
+        [],
+    )
 
     return (
-        <>
-        <TextContainer id={ 0 } name="catrina" />
-        <TextContainer id={ 1 } name="datos" />
-        <div className="topic-container">
-            <div id="parallax-bg-3" className="parallax-bg" data-speed=".75">
-                <div id="bg-3-1"></div>
-                <div id="bg-3-2"></div>
-                <div id="bg-3-3"></div>
-            </div>
+        <div className="topic">
+            <Lights />
+            <Numeralia />
+            <Snow />
+            <div
+                onClick={ () => setIsActive(true) }
+                className="btn btn-danger tips-btn d-flex align-items-center justify-content-center animate__animated animate__bounce animate__delay-3s">
+                <FontAwesomeIcon className="tips-icon" color="white" icon={ faLightbulb } size="3x" />
 
-            <TextContainer id={ 2 } name="pan podcast" />
-            <div id="parallax-bg-2" className="parallax-bg" data-speed=".1">
-                <div id="bg-2-1"></div>
-                <div id="bg-2-2"></div>
-                <div id="bg-2-3"></div> 
-                <div id="bg-2-4"></div>
-                <div id="bg-2-5"></div>
-                <div id="bg-2-6"></div>
-            </div>
-            
-            <div id="parallax-bg-1" className="parallax-bg" data-speed=".35">
-                <div id="bg-1-1"></div>
-                <div id="bg-1-2"></div>
-                <div id="bg-1-3"></div>
-                <div id="bg-1-4"></div>
-                <div id="bg-1-5"></div>
+                <Tips close={ close } />
+
             </div>
         </div>
-        </>
     )
 }

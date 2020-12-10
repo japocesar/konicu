@@ -20,12 +20,28 @@ export const home = () => {
 
 export const topic = () => {
   gsap.registerPlugin(ScrollTrigger);
-  gsap.to(".parallax-bg", {
-    scrollTrigger: {
-      scrub: true
-    }, 
-    y: (i, target) => -ScrollTrigger.maxScroll(window) * target.dataset.speed,
-    ease: "none"
+  gsap.utils.toArray(".card").forEach((panel, i) => {
+    const st = ( i === 0 ) ? "top center" : "bottom bottom"
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: panel,
+        start: st,
+        end: "+=150",
+        scrub: true,
+        markers: false,
+        // toggleClass: 'animate__rubberBand',
+        onToggle: ({ isActive }) => animateNumber(panel, isActive),
+      }
+    });
   });
-  
+
+}
+
+const animateNumber = ( panel, isActive ) => {
+  panel.classList.toggle('animate__rubberBand');
+  const title = panel.querySelector('h5');
+
+  panel.addEventListener('animationend', () => {
+    title.classList.toggle('animate__heartBeat');
+  });
 }

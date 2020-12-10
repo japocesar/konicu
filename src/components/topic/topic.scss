@@ -1,209 +1,260 @@
-@import "colors";
+$globe-width:   12px;
+$globe-height:  28px;
+$globe-spacing: 40px;
+$globe-spread: 3px;
+$light-off-opacity: 0.4;
 
-%text-container-shared {
-    background-image: url("../../assets/topic/papel-bkgnd.png");
-    background-size: cover;
-    color: white;
-    opacity: 0.9;
-    padding: 28px;
-    position: absolute;
-    z-index: 9;
-}
-
-.datos {
-    // background-color: rgba(255, 0, 0, 0.8);
-    // @include transparent_bckg($blue, 0.8);
-    @extend %text-container-shared;
-    right: 15%;
-    top: 690px;
-    // min-width: 98vw;
-    width: 310px;//35%;
-}
-
-.catrina {
-    @extend %text-container-shared;
-    left: 10%;
-    top: 100px;
-    width: 260px;
-    padding: 36px;
-}
-
-.pan {
-    @extend %text-container-shared;
-    left: 33%;
-    top: 1400px;
-    width: 230px;
-    padding: 25px;
-}
-
-.topic-container {
-    background: rgba(230, 231, 232, 1);
-    height: 3000px;
+.lightrope {
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  margin: -15px 0 0 0;
+  padding: 0;
+  pointer-events: none;
+  width: 100%;
+  li {
+    position: relative;
+    animation-fill-mode: both; 
+    animation-iteration-count:infinite;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: $globe-width;
+    height: $globe-height;
+    border-radius: 50%;
+    margin: $globe-spacing/2;
+    display: inline-block;
+    background: rgba(137,214,41,1);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,247,165,1);
+    animation-name: flash-1;
+    animation-duration: 2s;
+    &:nth-child(2n+1) {
+      background: rgba(137,214,41,1);
+      box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(0,247,165,0.5);
+      animation-name: flash-2;
+      animation-duration: 0.4s;
+    }
+    &:nth-child(4n+2) {
+      background: rgba(247,0,148,1);
+      box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(247,0,148,1);
+      animation-name: flash-3;
+      animation-duration: 1.1s;
+    }
+    &:nth-child(odd) {
+      animation-duration: 1.8s;
+    }
+    &:nth-child(3n+1) {
+      animation-duration: 1.4s;
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      background: #222;
+      width: ($globe-width - 2);
+      height: $globe-height/3;
+      border-radius: 3px;
+      top: (0 - ($globe-height/6));
+      left: 1px;
+    }
+    &:after {
+      content: "";
+      top: (0 - $globe-height/2);
+      left: $globe-width - 3;
+      position: absolute;
+      width: $globe-spacing + 12;
+      height: ($globe-height/3 * 2);
+      border-bottom: solid #222 2px;
+      border-radius: 50%;
+    }
+    &:last-child:after {
+      content: none;
+    }
+    &:first-child {
+      margin-left: -$globe-spacing;
+    }
   }
+}
+@keyframes flash-1 { 
+    // 0%, 100% { background: rgba(0,247,165,1);
+    0%, 100% { background: var(--orange);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread var(--orange);} 
+    50% { background: rgba(242,145,0,$light-off-opacity);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(242,145,0,0.2);}
+}
+@keyframes flash-2 { 
+    0%, 100% { background:var(--green);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(137,214,41,1);} 
+    50% { background: rgba(137,214,41,$light-off-opacity);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(137,214,41,0.2);}
+}
+@keyframes flash-3 { 
+    0%, 100% { background: var(--pink);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(250, 110, 159,1);} 
+    50% { background: rgba(250, 110, 159,$light-off-opacity);
+    box-shadow: 0px $globe-height/6 $globe-width*2 $globe-spread rgba(250, 110, 159,0.2);}
+}
 
-/* foreground (balloons/landscape)*/
-div#parallax-bg-1 {
-    position: fixed;
-    // width: 1200px;
+
+/* Page */
+@keyframes pulse {
+  0% {
+    background: red;
+    transform: scale(1);
+  }
+  
+  25% {
+    background: darken(red, 10%);
+    width: 25vw;
+    height: 25vh;
+    // transform: scale(3);
+  }
+  
+  50% {
+    background: red;
+    width: 50vw;
+    height: 50vh;
+    border-radius: 25px;
+    // transform: scale(1);
+  }
+  75% {
+    background: red;
+    width: 75vw;
+    height: 75vh;
+    // transform: scale(1);
+  }
+  100% {
+    background: red;
+    border-radius: 0px;
     width: 100vw;
-    top: 0;
-    left: 50%;
-    margin-left: -600px;
-    z-index: 1;
+    height: 100vh;
+    z-index: 1000;
+    left: 0;
+    bottom: 0;
 
-    /*background layer clouds */
-    div {
-        background-repeat: no-repeat;
-        position: absolute;
-        display: block;
-        width: 488px;
-        height: 138px;
-        overflow: hidden;
-        background-size: contain !important;
-        background-repeat: no-repeat !important;
-        
-        &#bg-1-1 {
-            background: url("../../assets/topic/papel.png");
-            top: 200px;
-            // right: 450px;
-            right: 15%;
-        }
-        &#bg-1-2 {
-            background: url("../../assets/topic/papel2.png");
-            top: 420px;
-            left: 0px;
-        }
-        &#bg-1-3 {
-            background: url("../../assets/topic/papel2.png");
-            top: 850px;
-            right: -290px;
-        }
-        &#bg-1-4 {
-            background: url("../../assets/topic/papel.png");
-            top: 1350px;
-            left: 200px;
-        }
-        &#bg-1-5 {
-            background: url("../../assets/topic/papel2.png");
-            top: 1200px;
-            left: 20%;
-        }
-    }
+    // transform: scale(1);
   }
+}
 
-  /* background middle layer*/
-div#parallax-bg-2 {
+@keyframes mini {
+  0% {
+    border-radius: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    left: 0;
+    bottom: 0;
+  }
+  25% {
+    border-radius: 15px;
+    width: 75vw;
+    height: 75vh;
+    z-index: unset;
+    left: 5px;
+    bottom: 5px;
+  }
+  
+  50% {
+    width: 50vw;
+    height: 50vh;
+    border-radius: 25px;
+    left: 8px;
+    bottom: 8px;
+    // transform: scale(1);
+  }
+  75% {
+    width: 25vw;
+    height: 25vh;
+    border-radius: 40px;
+    left: 12px;
+    bottom: 12px;
+  }
+  100% {
+    border-radius: 50px;
+    left: 15px;
+    bottom: 15px;
+    // transform: scale(1);
+  }
+}
+
+.tips-btn {
+    border-radius: 50px;
+    bottom: 15px;
+    height: 60px;
+    left: 15px;
     position: fixed;
-    width: 1200px;
-    top: 0;
-    left: 50%;
-    margin-left: -600px;
-    z-index: 2;
+    width: 60px;
 
-    div {
-        // background: url("../../assets/topic/papel2.png");
-        background-repeat: no-repeat;
-        position: absolute;
-        display: block;
-        background-size: contain;
-        width: 488px;
-        // width: 100vw;
-        height: 138px;
-        overflow: hidden;
-        background-size: contain !important;
-        background-repeat: no-repeat !important;
+    &.active{
+      align-items: flex-start !important;
+      animation: 0.5s linear 1 pulse forwards;
+      cursor: default !important;
+      justify-content: flex-start !important;
+      overflow-y: scroll;
 
-        &#bg-2-1 {
-            background: url("../../assets/topic/papel.png");
-            top: 100px;
-            left: 33%;
-        }
-        &#bg-2-2 {
-            background: url("../../assets/topic/papel2.png");
-            top: 270px;
-            right: -70px;
-        }
-        &#bg-2-3 {
-            background: url("../../assets/topic/papel2.png");
-            top: 870px;
-            left: -300px;
-        }
-        &#bg-2-4 {
-            background: url("../../assets/topic/papel.png");
-            top: 1120px;
-            right: -130px;
-        }
-        &#bg-2-5 {
-            background: url("../../assets/topic/papel.png");
-            top: 1620px;
-            // left: 140px;
-            left: 50%;
-        }
-        &#bg-2-6 {
-            background: url("../../assets/topic/papel.png");
-            top: 720px;
-            left: 340px;
-        }
+      .tips-icon {
+        display: none;
+      }
+
+      .tips-content {
+        display: block !important;
+      }
     }
+
+    &.inactive {
+      animation: 0.5s linear 1 mini forwards;
+      overflow-y: hidden;
+    }
+}
+.topic {
+  background-color: #0C1E42;
+}
+.numeralia {
+
+  h1 {
+    color: var(--orange);
+  }
+  #duende {
+    position: absolute;
+    top: 100px;
+    right: 10%;
+    z-index: 99;
   }
 
-div#parallax-bg-3 {
-    position: fixed;
-    width: 960px;
-    top: 0;
-    left: 50%;
-    margin-left: -470px;
-    z-index: 3;
+  hr {
+    border-top: 4px solid rgba(209, 196, 9, 0.8);
+    box-shadow: 5px 6px 6px #888888;
+    // height: 4px;
+  }
 
-    /* foreground */
-    div {
-        background-repeat: no-repeat;
-        position: absolute;
-        display: block;
-        overflow: hidden;
+  .col {
+    max-height: unset;
+    .card {
+      // background-color: red;
+      border: 5px dashed red;
+      min-height: 160px;
+      padding: 1px;
 
-        &#bg-3-1 {
-            // background: url("http://schulzmarcel.de/x/drafts/parallax/img/balloon.png");
-            background: url("../../assets/topic/catrina1.png");
-            background-size: contain;
-            width: 400px;
-            // width: 890px;
-            // height: 757px;
-            height: 400px;
-            // top: -100px;
-            top: 25px;
-            // right: 100px;
-            // right: 0%;
-            right: 15%;
+      .card-body {
+        background-color: var(--green);
+      }
+
+
+      h5 {
+        font-size: 5em;
+        color: goldenrod;
+        transform: rotate(-25deg);
+      }
+
+      &.first-card {
+        p {
+          padding-top: 15px;
         }
-        &#bg-3-2 {
-            // background: url("http://schulzmarcel.de/x/drafts/parallax/img/balloon2.png");
-            background: url("../../assets/topic/pan.png");
-            width: 603px;
-            height: 583px;
-            // top: 1050px;
-            top: 850px;
-            left: 70px;
-        }
-        &#bg-3-4 {
-            background: url("http://schulzmarcel.de/x/drafts/parallax/img/balloon3.png");
-            width: 446px;
-            height: 713px;
-            top: 1800px;
-            right: 140px;
-        }
-        &#bg-3-3 {
-            // background: url("http://schulzmarcel.de/x/drafts/parallax/img/ground.png");
-            background: url("../../assets/topic/altar.png");
-            background-size: cover;
-            // width: 1104px;
-            width: 960px;
-            // height: 684px;
-            height: 530px;
-            // top: 2800px;
-            top: 1940px !important;
-            // right: 0px;
-            right: 7%;
-        }
+      }
     }
   }
+  
+}
+
